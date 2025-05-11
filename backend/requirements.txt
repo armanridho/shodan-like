@@ -1,0 +1,12 @@
+# Core dependencies
+aiohttp==3.9.3
+asyncio==3.4.3
+beautifulsoup4==4.12.3
+geoip2==4.8.0
+requests==2.31.0
+sqlalchemy==2.0.25
+
+# Optional (for advanced features)
+scapy==2.5.0
+python-whois==0.9.3
+pysnmp==4.4.12

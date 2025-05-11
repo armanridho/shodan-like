@@ -1,0 +1,67 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+            <i class="bi bi-shield-lock-fill text-primary me-2"></i>
+            <span class="fw-bold">Minishodan</span>
+        </a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">
+                        <i class="bi bi-speedometer2 me-1"></i>Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/scan">
+                        <i class="bi bi-search me-1"></i>Scanner
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-clipboard2-data me-1"></i>Reports
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="toolsDropdown" role="button" data-bs-toggle="dropdown">
+                        <i class="bi bi-tools me-1"></i>Tools
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-globe me-2"></i>Whois Lookup</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-diagram-3 me-2"></i>Network Mapper</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-shield-exclamation me-2"></i>Vulnerability Scanner</a></li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <div class="d-flex">
+                <div class="input-group me-3" style="width: 250px;">
+                    <input type="text" class="form-control bg-secondary border-dark text-light" placeholder="Quick scan...">
+                    <button class="btn btn-primary" type="button">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </div>
+                
+                <div class="dropdown">
+                    <button class="btn btn-outline-light dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown">
+                        <i class="bi bi-person-circle me-1"></i>Admin
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-person me-2"></i>Profile</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-gear me-2"></i>Settings</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Toast container untuk notifikasi -->
+<div id="toast-container" class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 11"></div>

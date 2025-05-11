@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <div class="card bg-dark border-primary shadow-lg">
+            <div class="card-header bg-primary text-white">
+                <i class="bi bi-search me-2"></i>New Network Scan
+            </div>
+            <div class="card-body">
+                <form id="scan-form">
+                    <div class="mb-4">
+                        <label for="scan-ip" class="form-label">Target IP Address</label>
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <i class="bi bi-ip"></i>
+                            </span>
+                            <input type="text" class="form-control" id="scan-ip" 
+                                   placeholder="e.g., 192.168.1.1" required
+                                   pattern="^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$">
+                            <button class="btn btn-outline-secondary" type="button" 
+                                    data-bs-toggle="tooltip" title="Scan local network">
+                                <i class="bi bi-house"></i>
+                            </button>
+                        </div>
+                        <div class="form-text">Enter a valid IPv4 address to scan</div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="form-label">Scan Options</label>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="card bg-dark border-secondary h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <i class="bi bi-shield-check text-info me-2"></i>
+                                            Port Range
+                                        </h5>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="port-range" id="fast-scan" checked>
+                                            <label class="form-check-label" for="fast-scan">
+                                                Fast Scan (1-1024)
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="port-range" id="full-scan">
+                                            <label class="form-check-label" for="full-scan">
+                                                Full Scan (1-65535)
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="port-range" id="custom-scan">
+                                            <label class="form-check-label" for="custom-scan">
+                                                Custom Range
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card bg-dark border-secondary h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <i class="bi bi-gear text-warning me-2"></i>
+                                            Scan Type
+                                        </h5>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="service-detection" checked>
+                                            <label class="form-check-label" for="service-detection">
+                                                Service Detection
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="os-detection">
+                                            <label class="form-check-label" for="os-detection">
+                                                OS Detection
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="vuln-scan">
+                                            <label class="form-check-label" for="vuln-scan">
+                                                Vulnerability Check
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="progress mb-3 d-none" style="height: 20px;">
+                        <div id="scan-progress" class="progress-bar progress-bar-striped progress-bar-animated" 
+                             role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                            0%
+                        </div>
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                        <button type="submit" id="start-scan" class="btn btn-primary btn-lg">
+                            <i class="bi bi-search me-2"></i>Start Scan
+                        </button>
+                    </div>
+                </form>
+                
+                <div id="scan-results" class="mt-4"></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+{% endblock %}
