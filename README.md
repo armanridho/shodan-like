@@ -49,9 +49,9 @@ project-root/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/minishodan.git
-cd minishodan
-````
+git clone https://github.com/armanridho/shodan-like.git
+cd shodan-like
+```
 
 ### 2. Activate Virtual Environment (Optional but Recommended)
 
